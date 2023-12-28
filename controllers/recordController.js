@@ -6,7 +6,8 @@ const getRecords = (req, res) => {
 
   // Validation
   if (!x) {
-    return res.status(400).json({ message: 'Please include all fields' })
+    res.status(400)
+    throw new Error('Please include all fields')
   }
 
   res.send('records route')
