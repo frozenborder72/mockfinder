@@ -1,7 +1,9 @@
+const asyncHandler = require('express-async-handler')
+
 // @desc    Find records
 // @route   /api/records
 // @access  Public
-const getRecords = (req, res) => {
+const getRecords = asyncHandler(async (req, res) => {
   const { x } = req.body
 
   // Validation
@@ -11,6 +13,6 @@ const getRecords = (req, res) => {
   }
 
   res.send('records route')
-}
+})
 
 module.exports = { getRecords }
