@@ -13,10 +13,6 @@ const app = express()
 app.use(express.json())
 
 // Routes
-app.get('/api/records', (req, res) => {
-  res.status(201).json({ message: 'Hello' })
-})
-
 app.use('/api/records', require('./routes/recordRoutes'))
 
 app.use(errorHandler)

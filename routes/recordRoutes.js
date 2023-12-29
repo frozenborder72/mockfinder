@@ -1,8 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const { getRecords } = require('../controllers/recordController')
+const {
+  searchRecords,
+  getAllRecords,
+} = require('../controllers/recordController')
 
-router.post('/', getRecords)
+router.get('/', getAllRecords)
+router.post('/', searchRecords)
 
 module.exports = router
