@@ -15,16 +15,9 @@ const getAllRecords = asyncHandler(async (req, res) => {
 // @route   POST - /api/records
 // @access  Public
 const searchRecords = asyncHandler(async (req, res) => {
-  const { currency, routingType } = req.body
-  // const { x } = req.body
+  const { currency } = req.body
 
-  // // Validation
-  // if (!x) {
-  //   res.status(400)
-  //   throw new Error('Please include all fields')
-  // }
-
-  const records = await Record.find({ ...req.body })
+  const records = await Record.find({ currency })
 
   res.send(records)
 })
