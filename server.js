@@ -17,6 +17,7 @@ app.use(express.json())
 
 // Routes
 app.use('/api/records', require('./routes/recordRoutes'))
+app.use('/api/currencies', require('./routes/currencyRoutes'))
 
 app.use(errorHandler)
 
