@@ -8,7 +8,13 @@ const Currency = require('../models/currencyModel')
 const getAllCurrencies = asyncHandler(async (req, res) => {
   const currencies = await Currency.find()
 
-  res.status(200).send(currencies)
+  const currenciesToSend = currencies.map(({ value, label, desc }) => ({
+    value,
+    label,
+    desc,
+  }))
+
+  res.status(200).send(currenciesToSend)
 })
 
 module.exports = { getAllCurrencies }
