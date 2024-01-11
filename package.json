@@ -10,6 +10,8 @@
     "records:destroy": "node records-seeder.js -d",
     "currency:import": "node currency-seeder.js",
     "currency:destroy": "node currency-seeder.js -d",
+    "country:import": "node country-seeder.js",
+    "country:destroy": "node country-seeder.js -d",
     "build": "npm install"
   },
   "repository": {
